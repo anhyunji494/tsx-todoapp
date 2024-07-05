@@ -44,19 +44,21 @@ export default function TodoList(){
     }
   
     return (
-    <>
-        <div className="bg-rose-400 items-center h-fit p-50 ">
-          <div className="bg-white w-full m-20">
+      <>
+        <div className="flex items-center">
+        <div className="bg-purple-400 items-center h-fit m-5 p-7 ">
+
         {
           // map을 통해 list 내부 아이템 꺼내기
           todoList.map((item) => (
               <TodoItem key={item.id } text={item.text} completed={item.completed} />
           ))
-        }</div>
+        }
                 <CreateTodo onChange={
                     textTypingHandler
         } onSubmit={textInputHandler} inputText={inputText} />
-      </div>
+          </div>
+          </div>
     </>
   );
 }
